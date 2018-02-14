@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Relógio</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script>
+            function relogio()
+            {
+                var d= new Date();
+                var h=d.getHours();
+                var m=d.getMinutes();
+                var s=d.getSeconds();
+                if (h < 10){
+                    h = "0" + h;
+                }
+                if (m < 10){
+                    m = "0" + m;
+                }
+                if (s < 10){
+                    s = "0" + s;
+                }
+                
+                document.getElementById("txt").innerHTML=h+":"+m+":"+s;
+                setTimeout('relogio()', 1000);
+            }
+        </script>
+        
+        <style> 
+            body
+            {
+                background-color: black;
+            }
+            h1
+            {
+                text-align: center;
+                font-family: calibri;
+                color: white;
+                font-size: 150px;
+            }
+        </style>
+        
+        
+    </head>
+    <body onload="relogio()">
+        <h1>
+            <span id="txt"></span>
+        </h1>
+    </body>
+</html>
